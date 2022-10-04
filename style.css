@@ -1,0 +1,78 @@
+/* HEADER */
+.cj-banner {
+   display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(./img/ba1.jpg);
+
+    height: 100vh;
+    margin-bottom: 3vh;
+}
+.cj-navCard{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-right: 5vw;
+    width:50vw;
+
+    color:whitesmoke;
+}
+.cj-menu{
+    color:grey;
+}
+.cj-menu:hover{
+    color:lightgrey;
+}
+.cj-ticket{
+    color:darkgreen;
+}
+.cj-ticket:hover{
+    color:chartreuse;
+}
+.cj-btnheader{
+    color:whitesmoke;
+    background-color: rgba(48,175,36,1);
+    margin: 5px;
+}
+.cj-btnheader:hover{
+    border: solid 1 whitesmoke;
+    background-color: rgba(48,175,36,1);
+}
+
+/* MAIN */
+main {
+    margin: 0 10vw 3vh 10vw;
+    margin-bottom: 3vh;
+}
+.cj-oradores {
+    text-align: center;
+}
+
+/* FORMULARIO*/
+.cj-formulario {
+    margin: 0 20vw 3vh 20vw;
+}
+.cj-btnForm {
+    background-color: rgba(48,175,36,1);
+    color:whitesmoke
+}
+
+/* FOOTER*/
+footer{
+    background-color: rgba(14,67,87,1);
+    padding:2vh;
+}
+.cj-cajaFooter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.cj-menuFooter{
+    color:whitesmoke;
+    text-decoration: unset;
+}
+.cj-menuFooter:hover{
+    color:lightgrey;
+}
