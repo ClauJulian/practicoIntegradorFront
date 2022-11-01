@@ -1,18 +1,17 @@
 <!doctype html>
 <html lang="en">
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Integrador Front</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    
-    <link rel="stylesheet" href="style.css">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <header>
-        <nav class="cj-navAlign navbar navbar-dark navbar-expand-lg bg-dark opacity-100">
+    <!-- <header> -->
+    <nav class="cj-navAlign navbar navbar-dark navbar-expand-lg bg-dark opacity-100 sticky-top">
           <div class="container-fluid">
               <a class="navbar-brand text-light" href="#">
                 <img src="img/codoacodo.png" alt="Logo" width="70" height="35" class="d-inline-block align-text-top">
@@ -24,42 +23,41 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">                  
                   <li class="nav-item">
-                    <a class="cj-menu nav-link" aria-current="page" href="#">La conferencia</a>
+                    <a class="cj-menu nav-link" aria-current="page" href="#confe">La conferencia</a>
                   </li>
                   <li class="nav-item">
-                    <a class="cj-menu nav-link" href="#">Los oradores</a>
+                    <a class="cj-menu nav-link" href="#oradores">Los oradores</a>
                   </li>
                   <li class="nav-item">
-                    <a class="cj-menu nav-link" href="#">El lugar y la fecha</a>
+                    <a class="cj-menu nav-link" href="#lugarFecha">El lugar y la fecha</a>
                   </li>
                   <li class="nav-item">
-                    <a class="cj-menu nav-link" href="#">Los oradores</a>
+                    <a class="cj-menu nav-link" href="#convertite">Conviértete en orador</a>
                   </li>
                   <li class="nav-item">
-                    <a class="cj-menu nav-link" href="#">Conviértete en orador</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="cj-ticket nav-link" href="#">Comprar Ticket</a>
+                    <a id="comprarTicket1" class="cj-ticket nav-link" href="#tickets">Comprar Ticket</a>
                     </li>
                 </ul>
               </div>
-            </div>
-          </nav>
-
-          <!-- Fin Navegador - Banner -->
+          </div>
+    </nav>
+    <header>
+          <!--  Banner -->
           <div class="cj-banner text-end" style="width: 100vw;"><!-- agregué class cj-banner-->
+            <a name="confe"></a>
             <div class="cj-navCard card-body" style="height:100vh;">
               <h4 class="card-title">Conf Bs As</h4>
               <p class="card-text">Bs As llega por primera vez a Argentina. Un evento para compartir con nuestra comunidad el conocimiento y experincia de los expertos que están creando el futuro de Internet. Ven a conocer a miembros del evento, a otros estudiantes de Codo a Codo y los oradores de primer nivel que tenemos para ti. Te esperamos!</p>
               <div class="btn-group">
                 <a href="#" class="cj-btnheader btn active">Quiero ser orador</a>
-                <a href="#" class="cj-btnheader btn">Comprar tickets</a>
+                <a id="comprarTicket2" href="#tickets" class="cj-btnheader btn">Comprar tickets</a>
               </div>
             </div>
           </div>
           <!-- Fin Banner -->
     </header>
     <main>
+        <a name="oradores"></a>
         <div class="cj-oradores">
             <h6>CONOCE A LOS</h6>
             <h3>ORADORES</h3>
@@ -102,6 +100,7 @@
           </div>
     </main>
     <section>
+        <a name="lugarFecha"></a>
         <div class="card mb-3" style="width: 100vw;">
             <div class="row g-0">
             <div class="col-md-6">
@@ -120,6 +119,7 @@
     </section>
     <!-- Formulario -->
     <section class="cj-formulario">
+        <a name="convertite"></a>
         <div class="card-body text-center">
           <p>CONVERTITE EN UN</p>
           <h2>ORADOR</h2>
@@ -142,12 +142,90 @@
           <button class="cj-btnForm btn" type="submit">Enviar</button>
         </div>
     </section>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <!-- Comprar tickets -->
+    <section class="cj-tickets"> 
+      <a name="tickets"></a> 
+      <div id="seccionTickets">
+          <div class="card-group text-center mb-3">
+            <div class="card border-primary p-3">
+              <div class="card-body">
+                <h5 class="card-title">Estudiante</h5>
+                <p class="card-text">Tiene un descuento</p>
+              </div>
+                <h5>80%</h5>
+                <small class="text-muted">* presentar documentación</small>
+            </div>
+            <div class="card border-success p-3">
+              <div class="card-body">
+                <h5 class="card-title">Trainee</h5>
+                <p class="card-text">Tiene un descuento</p>
+              </div>
+                <h5>50%</h5>             
+                <small class="text-muted mb-2">* presentar documentación</small>
+            </div>
+            <div class="card border-danger p-3">
+              <div class="card-body">
+                <h5 class="card-title">Junior</h5>
+                <p class="card-text">Tiene un descuento</p>
+              </div>
+                <h5>15%</h5>
+                <small class="text-muted">* presentar documentación</small>
+            </div>          
+          </div>
 
-  </body>
-  <!-- </footer> -->
-  <footer>
+          <div class="card-body text-center">
+            <p>VENTA</p>
+            <h2>VALOR DE TICKET $200</h2>
+          </div>
+
+          <div class="row row-cols-1 row-cols-md-2 mb-3">
+              <div class="col mt-3">
+              <input id="nombre" type="text" class="form-control" placeholder="Nombre" aria-label="First name">
+              </div>
+              <div class="col mt-3">
+              <input id="apellido" type="text" class="form-control" placeholder="Apellido" aria-label="Last name">
+              </div>
+          </div>
+          <div class="mb-3">
+            <input id="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="email" aria-describedby="emailHelp">
+          </div>
+          <div class="row row-cols-1 row-cols-md-2 mb-3">
+            <div class="col mt-3">
+              <label>Cantidad</label>
+              <input id="cantidad" type="number" class="form-control" placeholder="Cantidad" aria-label="Cantidad">
+            </div>
+            <div class="col mt-3">
+              <label>Categoria</label>
+              <select id="categorias" class="form-select" aria-label="Default select example">
+                <option value="x" disabled selected>Seleccionar</option>
+                <option value="1">Estudiante</option>
+                <option value="2">Trainee</option>
+                <option value="3">Junior</option>
+                <option value="0">Sin Categoría</option>
+              </select>
+            </div>
+            
+          </div>  
+          <div class="d-grid gap-2">
+            <button id="totalPagar" class="cj-btnTickets btn" type="">Total a Pagar $ </button>
+          </div>
+          <div class="row row-cols-1 row-cols-md-2">
+            <div class="col mt-3">
+            <button id="borrar" type="button" class="cj-btnBorrar btn btn-primary" style="width:100%">Borrar</button>
+            </div>
+            <div class="col mt-3">
+            <button id="resumen" type="button" class="cj-btnBorrar btn btn-secondary" style="width:100%">Resumen</button>
+            </div>
+          </div>
+          <!-- Validaciones -->
+          <div id="validacionNombre"><p></p></div>
+          <div id="validacionCantidad"><p></p></div>
+          <div id="validacionMail"><p></p></div>
+          <div id="validacionCategoria"><p></p></div>
+      </div>
+    </section>
+    <!-- </footer> -->
+    <footer>
     <div class="container text-center" style="width:90vw;">
       <div class="cj-cajaFooter row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-auto">
         <div class="col"><a href="" class="cj-menuFooter">Preguntas Frecuentes</a></div>
@@ -159,6 +237,10 @@
         <div class="col"><a href="" class="cj-menuFooter">Estudiantes</a></div>
       </div>
     </div>
-  </footer>
- 
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="scrips.js"></script>
+    </body>
+
 </html>
