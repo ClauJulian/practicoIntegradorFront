@@ -21,7 +21,7 @@ let borrar;
 
 comprarTicket1 = document.getElementById("comprarTicket1");
 comprarTicket2 = document.getElementById("comprarTicket2");
-comprarTicket3 = document.getElementById("comprarTicket3");
+// comprarTicket3 = document.getElementById("comprarTicket3");
 
 seccionTickets = document.getElementById("seccionTickets");
 totalPagar = document.getElementById("totalPagar");
