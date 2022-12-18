@@ -43,7 +43,7 @@ let val_completa;
 
 comprarTicket1.addEventListener("click",displayTicket);
 comprarTicket2.addEventListener("click",displayTicket);
-comprarTicket3.addEventListener("click",displayTicket);
+// comprarTicket3.addEventListener("click",displayTicket);
 
 function displayTicket() {
     seccionTickets.style.display="inline-block";    
