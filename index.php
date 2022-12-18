@@ -1,46 +1,6 @@
-<!doctype html>
-<html lang="en">
-
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Integrador Front</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <!-- <header> -->
-    <nav class="cj-navAlign navbar navbar-dark navbar-expand-lg bg-dark opacity-100 sticky-top">
-          <div class="container-fluid">
-              <a class="navbar-brand text-light" href="#">
-                <img src="img/codoacodo.png" alt="Logo" width="70" height="35" class="d-inline-block align-text-top">
-                Conf Bs As
-              </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">                  
-                  <li class="nav-item">
-                    <a class="cj-menu nav-link" aria-current="page" href="#confe">La conferencia</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="cj-menu nav-link" href="#oradores">Los oradores</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="cj-menu nav-link" href="#lugarFecha">El lugar y la fecha</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="cj-menu nav-link" href="#convertite">Conviértete en orador</a>
-                  </li>
-                  <li class="nav-item">
-                    <a id="comprarTicket1" class="cj-ticket nav-link" href="#tickets">Comprar Ticket</a>
-                    </li>
-                </ul>
-              </div>
-          </div>
-    </nav>
+<?php
+include ("headerHtml.php");
+?>
     <header>
           <!--  Banner -->
           <div class="cj-banner text-end" style="width: 100vw;"><!-- agregué class cj-banner-->
@@ -108,10 +68,11 @@
             </div>
             <div class="col-md-6 text-light bg-dark opacity-75">
                 <div class="card-body">
-                <h4 class="card-title">Bs As - Octubre</h4>
-                <p class="card-text">Buenos Aires es la provincia y localidad mas grande del estado de Argentina, en los Estados Unidos. Honolulu es la más sureña de entre las principales ciudades estadounidenses. Aunque el nombre de Honolulu se refiere al área urbana en la costa sureste de la isla de Oahu, la ciudad y el condado de Honolulu han formado una ciudad-condado consolidada que cubre toda la ciudad (aproximadamente 600 km2 de superficie).</p>
+                <h4 class="card-title">Honolulu - Enero</h4>
+                <p class="card-text">Honolulu es la más sureña de entre las principales ciudades estadounidenses. Aunque el nombre de Honolulu se refiere al área urbana en la costa sureste de la isla de Oahu, la ciudad y el condado de Honolulu han formado una ciudad-condado consolidada que cubre toda la ciudad (aproximadamente 600 km2 de superficie).</p>
                 
-                <p class="card-text"><small><button type="button" class="btn btn-outline-light">Conoce más</button></small></p>
+                <p class="card-text"><small><button type="button" class="btn btn-outline-light"><a href="enero23.php" class="link-light">Conoce más</a></button></small></p>
+                
             </div>
           </div>
         </div>
@@ -125,22 +86,33 @@
           <h2>ORADOR</h2>
           <P>Anotate como orador para dar una <span>charla ignite.</span> Cuéntanos de qué quieres hablar!</P>
         </div>
-        <div class="row row-cols-1 row-cols-md-2">
-            <div class="col mt-3">
-            <input type="text" class="form-control" placeholder="Nombre" aria-label="First name">
-            </div>
-            <div class="col mt-3">
-            <input type="text" class="form-control" placeholder="Apellido" aria-label="Last name">
-            </div>
-        </div>
-        <div class="mb-3">
-          <label for="exampleFormControlTextarea1" class="form-label"></label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Sobre que quieres hablar?" aria-label="Textarea"></textarea>
-          <p class="text-muted"><small>Recuerda incluir un título a tu charla.</small></p>
-        </div>  
-        <div class="d-grid gap-2">
-          <button class="cj-btnForm btn" type="submit">Enviar</button>
-        </div>
+
+      <form action="agregarOrador.php" method=GET novalidate>
+          <div class="row row-cols-1 row-cols-md-2">
+              <div class="col mt-3">
+                <input type="text" id="nombreOrador" class="form-control" name="nombre" placeholder="Nombre" aria-label="First name" required>
+                <small id="mensaje_nombre"></small>
+              </div>
+              <div class="col mt-3">
+                <input type="text" id="apellidoOrador" class="form-control" name="apellido" placeholder="Apellido" aria-label="Last name">
+                <small id="mensaje_apellido"></small>
+              </div>        
+          </div>
+          <div class="mt-3">
+              <input type="email" id="mailOrador" class="form-control" name="email" placeholder="Email" aria-label="Email">
+              <small id="mensaje_mail"></small>
+          </div>
+          <div class="mt-3">
+            <input id="tituloCharla" class="form-control" name="charla_titulo" id="exampleFormControlTextarea1" rows="3" placeholder="Título de tu charla" aria-label="tituloCharla">
+            <small id="mensaje_titulo"></small>
+          </div> 
+          <div class="d-grid gap-2 mt-3">
+            <input id="enviar_orador" class="cj-btnForm btn btn-success" type="submit" value="Enviar">
+          </div>
+          <div class="d-grid gap-2 mt-3">
+            <input id="noEnviar_orador" class="cj-btnNoEnviar btn btn-success" type="" value="Enviar">
+          </div>   
+      </form>
     </section>
     <!-- Comprar tickets -->
     <section class="cj-tickets"> 
@@ -218,29 +190,14 @@
             </div>
           </div>
           <!-- Validaciones -->
-          <div id="validacionNombre"><p></p></div>
-          <div id="validacionCantidad"><p></p></div>
+          <div id="validacionNombre" ><p></p></div>
+          <div id="chequeoCantidad"><p></p></div>
           <div id="validacionMail"><p></p></div>
           <div id="validacionCategoria"><p></p></div>
       </div>
     </section>
-    <!-- </footer> -->
-    <footer>
-    <div class="container text-center" style="width:90vw;">
-      <div class="cj-cajaFooter row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-auto">
-        <div class="col"><a href="" class="cj-menuFooter">Preguntas Frecuentes</a></div>
-        <div class="col"><a href="" class="cj-menuFooter">Contáctanos</a></div>
-        <div class="col"><a href="" class="cj-menuFooter">Prensa</a></div>
-        <div class="col"><a href="" class="cj-menuFooter">Conferencias</a></div>
-        <div class="col"><a href="" class="cj-menuFooter">Términos y Condiciones</a></div>
-        <div class="col"><a href="" class="cj-menuFooter">Privacidad</a></div>
-        <div class="col"><a href="" class="cj-menuFooter">Estudiantes</a></div>
-      </div>
-    </div>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-    <script src="scrips.js"></script>
-    </body>
-
-</html>
+<?php
+include "footerHtml.php";
+?>
+    

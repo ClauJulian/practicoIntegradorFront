@@ -26,10 +26,11 @@
     color:lightgrey;
 }
 .cj-ticket{
-    color:darkgreen;
+    color:chartreuse;
 }
 .cj-ticket:hover{
-    color:chartreuse;
+    background-color: rgba(48,175,36,1);
+    color:white;
 }
 .cj-btnheader{
     color:whitesmoke;
@@ -82,10 +83,15 @@ main {
     background-color: rgb(142, 211, 77);
     border: none;
 }
+/* ORADOR */
+#enviar_orador{
+    display:none;
+}
 
 /* FOOTER */
 footer{
     background-color: rgba(14,67,87,1);
+    margin-bottom: 4vh;
     padding:2vh;
 }
 .cj-cajaFooter{
